@@ -1,58 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Enums;
+﻿using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Tilemaps;
+using WaveFunctionCollapse.Core;
 using WaveFunctionCollapse.Inputs;
+using WaveFunctionCollapse.Output;
 using WaveFunctionCollapse.Patterns;
 
 namespace DefaultNamespace
 {
     public class Test : MonoBehaviour
     {
-        public Tilemap input;
-        
+        [FormerlySerializedAs("input")] public Tilemap inputTilemap;
+
+        [FormerlySerializedAs("output")] public Tilemap outputTilemap;
+        public int patternSize;
+        public int maxIteration = 500;
+        public int outputWidth = 5;
+        public int outputHeight = 5;
+        public bool equalWeights = false;
+        private ValuesManager<TileBase> valuesManager;
+        private WFCCore core;
+        private PatternManager manager;
+        private TilemapOutput output;
+
         private void Start()
         {
-            InputReader reader = new(input);
-            var grid = reader.ReadInputToGrid();
-//            for (int row = 0; row < grid.Length; row++)
-//            {
-//                for (int col = 0; col < grid[0].Length; col++)
-//                {
-//                    Debug.Log($"Row:{row} Col:{col} Tile Name: {grid[row][col].Value.name}");
-//                }
-//            }
+            CreateWfc();
+        }
 
-            ValuesManager<TileBase> valueManager = new(grid);
-            PatternManager manager = new(1);
-            
-            manager.ProcessGrid(valueManager, false);
-            foreach (Direction dir in Enum.GetValues(typeof(Direction)))
+        public void CreateWfc()
+        {
+            InputReader reader = new(inputTilemap);
+            var grid = reader.ReadInputToGrid();
+            valuesManager = new(grid);
+            manager = new(patternSize);
+            manager.ProcessGrid(valuesManager, equalWeights);
+            core = new(outputWidth, outputHeight,maxIteration, manager);
+        }
+
+        public void CreateTilemap()
+        {
+            output = new(valuesManager, outputTilemap);
+            var result = core.CreateOutputGrid();
+            output.CreateOutput(manager, result, outputWidth, outputHeight);
+        }
+
+        public void SaveTilemap()
+        {
+            if (output.OutputImage != null)
             {
-                Debug.Log(dir.ToString() + " " + string.Join(" ", manager.GetPossibleNeighboursForPatternInDictionary(0,dir).ToArray()));
+                outputTilemap = output.OutputImage;
+                GameObject objectToSave = outputTilemap.gameObject;
+
+                PrefabUtility.SaveAsPrefabAsset(objectToSave, "Assets/Saved/output.prefab");
             }
-//            StringBuilder builder = null;
-//            List<string> strList = new();
-//            
-//            for (int row = -1; row <= grid.Length; row++)
-//            {
-//                builder = new();
-//                for (int col = -1; col <= grid[0].Length; col++)
-//                {
-//                    builder.Append(valuesManager.GetGridValuesIncludingOffset(col, row) + " ");
-//                }  
-//                strList.Add(builder.ToString());
-//            }
-//            
-//            strList.Reverse();
-//            
-//            foreach (var item in strList)
-//            {
-//                Debug.Log(item);
-//            }
         }
     }
 }
