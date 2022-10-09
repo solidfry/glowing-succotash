@@ -2,7 +2,7 @@ Shader "Cainos/Sprite Shadow Mask"
 {
 	Properties
 	{
-		[PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
+		 _MainTex ("Sprite Texture", 2D) = "white" {}
 		[HDR] _Color ("Tint", Color) = (1,1,1,1)
 		_AlphaClip ("Alpha Clip" , Float) = 0.05
 
