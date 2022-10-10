@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 842594229750208452}
   - component: {fileID: 399112741809304588}
+  - component: {fileID: 7923553707540282488}
   m_Layer: 0
   m_Name: Lamp
   m_TagString: Untagged
@@ -44,21 +45,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85a34663ca705a54eac3205e225a6d45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightType: 0
+  lightType: 1
   lightPresetId: 0
   eventPresetId: 0
   lightLayer: 0
   occlusionLayer: 0
-  translucentLayer: 0
+  translucentLayer: 1
   translucentPresetId: 0
-  color: {r: 1, g: 0.94286335, b: 0.8066038, a: 0.121}
-  size: 2.4
+  color: {r: 0.8705506, g: 0.8193417, b: 0.7032683, a: 1}
+  size: 2
   spotAngleInner: 0
   spotAngleOuter: 360
   coreSize: 0.5
   falloff: 0
-  lightStrength: 0
-  outerAngle: 15
+  lightStrength: 0.285
+  outerAngle: 0
   lightRadius: 1
   shadowDistanceClose: 0
   shadowDistanceFar: 5
@@ -68,7 +69,7 @@ MonoBehaviour:
   textureSize: 1
   meshMode:
     enable: 0
-    alpha: 0.5
+    alpha: 0.871
     shader: 0
     materials:
     - {fileID: 0}
@@ -76,7 +77,7 @@ MonoBehaviour:
       name: Default
       Order: 0
   bumpMap:
-    intensity: 1
+    intensity: 1.383
     depth: 1
   whenInsideCollider: 0
   lightSprite: 0
@@ -93,3 +94,19 @@ MonoBehaviour:
     - {x: -0.4999999, y: -0.86602545}
   drawingEnabled: 1
   drawingTranslucencyEnabled: 1
+--- !u!58 &7923553707540282488
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336642667471674999}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.3
