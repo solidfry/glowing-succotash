@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8983888743022362690}
-  - component: {fileID: 8983888743022362703}
+  - component: {fileID: 433190944350904112}
+  - component: {fileID: 5336060177789764925}
   - component: {fileID: 8983888743022362691}
   - component: {fileID: 8983888743022362700}
   - component: {fileID: 8983888743022362701}
@@ -39,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8983888743022362703
+--- !u!114 &433190944350904112
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -48,10 +49,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 8983888743022362688}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd146093740c5d43b5909c7913f3109, type: 3}
+  m_Script: {fileID: 11500000, guid: c36d49e0f7a64f09893870bd2f49ee37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  mousePos: {x: 0, y: 0, z: 0}
+  dir: {x: 0, y: 0}
+--- !u!114 &5336060177789764925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8983888743022362688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 781de52a05cd5494bba8dcc649ea0f90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToThrow: {fileID: 4884916815877908207, guid: a67fa2206e7cf414ba642339dbf60f25,
+    type: 3}
+  force: 400
+  torque: 5
 --- !u!212 &8983888743022362691
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -143,7 +162,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 2
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
