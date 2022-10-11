@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPoints: 100
   tickTime: 1
+  isDecrementing: 0
 --- !u!114 &433190944350904112
 MonoBehaviour:
   m_ObjectHideFlags: 0
