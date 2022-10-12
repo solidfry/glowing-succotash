@@ -1,4 +1,6 @@
-﻿using Core;
+﻿using System;
+using Core;
+using Events;
 using UnityEngine;
 
 namespace Player
@@ -10,7 +12,17 @@ namespace Player
         private Animator animator;
         private ThrowItem throwItem;
         [ReadOnly][SerializeField] private Vector2 dir;
+        [SerializeField] private bool controlsEnabled = true;
         private static readonly int Direction = Animator.StringToHash("Direction");
+        private static readonly int IsMoving = Animator.StringToHash("IsMoving");
+        private Camera cam;
+        private Rigidbody2D rb;
+
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+            cam = Camera.main;
+        }
 
         private void Start()
         {
@@ -18,13 +30,21 @@ namespace Player
             animator = GetComponent<Animator>();
         }
 
+        private void OnEnable() => GameEvents.onCharacterDiedEvent += SetControlsInactive;
+        private void OnDisable() => GameEvents.onCharacterDiedEvent -= SetControlsInactive;
+       
+        private void SetControlsInactive() => controlsEnabled = false;
+        private void SetControlsActive() => controlsEnabled = true;
 
         private void Update()
         {
-            
-            mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+            if (controlsEnabled) Controls();
+        }
+
+        void Controls()
+        {
+            mousePos = cam.ScreenToWorldPoint(Input.mousePosition) - transform.position;
             mousePos.Normalize();
-            
             dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
@@ -50,9 +70,9 @@ namespace Player
             
             dir.Normalize();
             throwItem.Fire(mousePos);
-            animator.SetBool("IsMoving", dir.magnitude > 0);
+            animator.SetBool(IsMoving, dir.magnitude > 0);
 
-            GetComponent<Rigidbody2D>().velocity = speed * dir;
+            rb.velocity = speed * dir;
         }
     }
 }

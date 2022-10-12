@@ -54,7 +54,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoints: 100
+  maxHitPoints: 100
   tickTime: 1
+  hitPointDecrementValue: 10
   isDecrementing: 0
 --- !u!114 &433190944350904112
 MonoBehaviour:
@@ -83,6 +85,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 781de52a05cd5494bba8dcc649ea0f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  charges: 3
+  maxCharges: 3
   prefabToThrow: {fileID: 4884916815877908207, guid: a67fa2206e7cf414ba642339dbf60f25,
     type: 3}
   force: 400
@@ -265,7 +269,7 @@ PolygonCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_AutoTiling: 1
   m_Points:
     m_Paths:
     - - {x: 0.125, y: -0.21875}
