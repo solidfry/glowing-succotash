@@ -11,6 +11,7 @@ namespace DefaultNamespace
 {
     public class Test : MonoBehaviour
     {
+#if UNITY_EDITOR
         [FormerlySerializedAs("input")] public Tilemap inputTilemap;
 
         [FormerlySerializedAs("output")] public Tilemap outputTilemap;
@@ -56,5 +57,6 @@ namespace DefaultNamespace
                 PrefabUtility.SaveAsPrefabAsset(objectToSave, "Assets/Saved/output.prefab");
             }
         }
+#endif
     }
 }

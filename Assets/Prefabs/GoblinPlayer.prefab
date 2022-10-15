@@ -73,6 +73,7 @@ MonoBehaviour:
   speed: 3
   mousePos: {x: 0, y: 0, z: 0}
   dir: {x: 0, y: 0}
+  controlsEnabled: 1
 --- !u!114 &5336060177789764925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,7 +90,7 @@ MonoBehaviour:
   maxCharges: 3
   prefabToThrow: {fileID: 4884916815877908207, guid: a67fa2206e7cf414ba642339dbf60f25,
     type: 3}
-  force: 400
+  force: 700
   torque: 5
 --- !u!212 &8983888743022362691
 SpriteRenderer:

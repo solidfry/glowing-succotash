@@ -8,7 +8,7 @@ namespace Core
     {
         public int hitPoints;
         public int maxHitPoints = 100;
-        public int tickTime;
+        public float tickTime;
         public int hitPointDecrementValue = 1;
         [SerializeField] private bool isDecrementing;
 
@@ -66,8 +66,8 @@ namespace Core
                 if(isDecrementing)
                 {
                     HitPoints -= HitPointDecrementValue;
-                    float healthAsPercent = (float)HitPoints / (float)100;
-                   GameEvents.onCharacterDamagedEvent?.Invoke(healthAsPercent);
+                    float healthAsPercent = (float)HitPoints / (float)maxHitPoints;
+                    GameEvents.onCharacterDamagedEvent?.Invoke(healthAsPercent);
                 }
                 yield return new WaitForSeconds(tickTime);
             }

@@ -11,6 +11,10 @@ GameObject:
   - component: {fileID: 8150943836969720519}
   - component: {fileID: 558602921394853137}
   - component: {fileID: 2521662357303567223}
+  - component: {fileID: 2110354784}
+  - component: {fileID: 2110354783}
+  - component: {fileID: 2110354781}
+  - component: {fileID: 2110354782}
   m_Layer: 0
   m_Name: Map3-2
   m_TagString: Untagged
@@ -25,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4528785277537422464}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.79, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -931,7 +935,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -939,4 +943,212 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
+--- !u!50 &2110354784
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528785277537422464}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!66 &2110354783
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528785277537422464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 2110354781}
+    m_ColliderPaths:
+    - - X: 90000000
+        Y: 90000000
+      - X: -10000000
+        Y: 90000000
+      - X: -10000000
+        Y: -10000000
+      - X: 90000000
+        Y: -10000000
+    - - X: 20000000
+        Y: 20000000
+      - X: 20000000
+        Y: 50000000
+      - X: 30000000
+        Y: 50000000
+      - X: 30000000
+        Y: 60000000
+      - X: 40000000
+        Y: 60000000
+      - X: 40000000
+        Y: 70000000
+      - X: 10000000
+        Y: 70000000
+      - X: 10000000
+        Y: 80000000
+      - X: 50000000
+        Y: 80000000
+      - X: 50000000
+        Y: 70000000
+      - X: 60000000
+        Y: 70000000
+      - X: 60000000
+        Y: 60000000
+      - X: 50000000
+        Y: 60000000
+      - X: 50000000
+        Y: 40000000
+      - X: 60000000
+        Y: 40000000
+      - X: 60000000
+        Y: 50000000
+      - X: 70000000
+        Y: 50000000
+      - X: 70000000
+        Y: 70000000
+      - X: 80000000
+        Y: 70000000
+      - X: 80000000
+        Y: 40000000
+      - X: 70000000
+        Y: 40000000
+      - X: 70000000
+        Y: 30000000
+      - X: 50000000
+        Y: 30000000
+      - X: 50000000
+        Y: 20000000
+    - - X: 40000000
+        Y: 40000000
+      - X: 30000000
+        Y: 40000000
+      - X: 30000000
+        Y: 30000000
+      - X: 40000000
+        Y: 30000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 8.99997, y: -1}
+      - {x: 8.99997, y: 9}
+      - {x: -1, y: 8.99997}
+      - {x: -0.99997073, y: -1}
+    - - {x: 5, y: 2.0000293}
+      - {x: 2, y: 2.0000293}
+      - {x: 2.0000293, y: 5}
+      - {x: 3, y: 5.000029}
+      - {x: 3.0000293, y: 6}
+      - {x: 4, y: 6.000029}
+      - {x: 3.999971, y: 7}
+      - {x: 1, y: 7.0000296}
+      - {x: 1.0000294, y: 8}
+      - {x: 5, y: 7.9999704}
+      - {x: 5.000029, y: 7}
+      - {x: 6, y: 6.9999704}
+      - {x: 5.9999704, y: 6}
+      - {x: 5, y: 5.999971}
+      - {x: 5.000029, y: 4}
+      - {x: 6, y: 4.000029}
+      - {x: 6.0000296, y: 5}
+      - {x: 7, y: 5.000029}
+      - {x: 7.0000296, y: 7}
+      - {x: 8, y: 6.9999704}
+      - {x: 7.9999704, y: 4}
+      - {x: 7, y: 3.999971}
+      - {x: 6.9999704, y: 3}
+      - {x: 5, y: 2.999971}
+    - - {x: 3.999971, y: 3}
+      - {x: 3.999971, y: 4}
+      - {x: 3, y: 3.999971}
+      - {x: 3.0000293, y: 3}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!19719996 &2110354781
+TilemapCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528785277537422464}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 1
+  m_Offset: {x: 0, y: 0}
+  m_MaximumTileChangeCount: 1000
+  m_ExtrusionFactor: 0.00001
+--- !u!114 &2110354782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4528785277537422464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 143f829798ec14143ac2b96528ed9425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mapType: 0
+  shadowLayer: 0
+  maskLayer: 0
+  shadowTranslucency: 0.046
+  shadowTileType: 1
+  bumpMapMode:
+    type: 0
+    textureType: 0
+    texture: {fileID: 0}
+    sprite: {fileID: 0}
+    invertX: 0
+    invertY: 0
+    depth: 1
+    spriteRenderer: {fileID: 0}
+  rectangle:
+    shadowType: 1
+    maskType: 1
+    gameObject: {fileID: 4528785277537422464}
+    transform: {fileID: 8150943836969720519}
+    shadowOptimization: 1
+  isometric:
+    shadowType: 1
+    maskType: 2
+    gameObject: {fileID: 4528785277537422464}
+    transform: {fileID: 8150943836969720519}
+    ZasY: 0
+  hexagon:
+    shadowType: 1
+    maskType: 2
+    gameObject: {fileID: 4528785277537422464}
+    transform: {fileID: 8150943836969720519}
+  superTilemapEditor:
+    shadowType: 1
+    maskType: 2
+    gameObject: {fileID: 4528785277537422464}
+    transform: {fileID: 8150943836969720519}
+    shadowTypeSTE: 1
+    maskTypeSTE: 2
+    eventsInit: 0
